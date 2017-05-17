@@ -45,11 +45,11 @@
             </fieldset>
 
             <div class="wc-Form-group js-Form-group">
-              {{ form.description.label(class_='wc-Form-label') }} {{ form.description(class_='wc-Form-item wc-Form-item--textarea js-autoExpand', rows=7) }}
+              {{ form.description.label(class_='wc-Form-label') }} {{ form.description(class_='wc-Form-item wc-Form-item--textarea js-autoExpand', rows=4) }}
             </div>
 
             <div class="wc-Form-group js-Form-group">
-              {{ form.description.label(class_='wc-Form-label') }} {{ form.description(class_='wc-Form-item wc-Form-item--textarea js-autoExpand', rows=7) }}
+              {{ form.steps_reproduce.label(class_='wc-Form-label') }} {{ form.steps_reproduce(class_='wc-Form-item wc-Form-item--textarea js-autoExpand', rows=4) }}
             </div>
 
 
@@ -71,14 +71,14 @@
               </span>
             </div>
 
-            <fieldset class="{% if form.problem_category.errors %}is-error{% endif %}">
+            <fieldset class="{% if form.browser_test_category.errors %}is-error{% endif %}">
               <div class="wc-Form-information">
-                <label class="wc-Form-label">What seems to be the trouble? <span class="wc-Form-required">*</span></label>
-                {% if form.problem_category.errors %}{% for error in form.problem_category.errors %}
+                <label class="wc-Form-label">Did you test in another browser? <span class="wc-Form-required">*</span></label>
+                {% if form.browser_test_category.errors %}{% for error in form.browser_test_category.errors %}
                 <span class="wc-Form-helpMessage">{{ error }}</span>
                 {% endfor %}{% endif %}
               </div>
-                {% for subradio in form.problem_category %}
+                {% for subradio in form.browser_test_category %}
                 <div class="wc-Form-radio">
                   {{ subradio }} {{ subradio.label }}
                 </div>

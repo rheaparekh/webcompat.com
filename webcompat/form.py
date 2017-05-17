@@ -40,6 +40,11 @@ problem_choices = [
     (u'unknown_bug', u'Something else')
 ]
 
+browser_test_choices = [
+    (u'yes', u'Yes'),
+    (u'no', u'No')
+]
+
 url_message = u'A valid URL is required.'
 image_message = (u'Please select an image of the following type:'
                  ' jpg, png, gif, or bmp.')
@@ -56,9 +61,14 @@ desc_default = u'''1. Navigate to: Site URL
 
 Expected Behavior:
 
-Actual Behavior:
 '''
 
+steps_default = u'''1. Navigate to: Site URL
+2. …
+
+Actual Behavior:
+
+'''
 
 class IssueForm(FlaskForm):
     '''Define form fields and validation for our bug reporting form.'''
@@ -68,11 +78,18 @@ class IssueForm(FlaskForm):
     os = StringField(u'Operating System', [Optional()])
     username = StringField(u'Username',
                            [Length(max=0, message=username_message)])
-    description = TextAreaField(u'Give more details', [Optional()],
+    description = TextAreaField(u'Describe what was wrong', [Optional()],
                                 default=desc_default)
+    steps_reproduce = TextAreaField(u'How did you get there?', [Optional()],
+                                default=steps_default)
     problem_category = RadioField(problem_label,
                                   [InputRequired(message=radio_message)],
                                   choices=problem_choices)
+    browser_test_category = RadioField(problem_label,
+                                  [InputRequired(message=radio_message)],
+                                  choices=browser_test_choices)
+
+
     # we filter allowed type in uploads.py
     # Note, we don't use the label programtically for this input[type=file],
     # any changes here need to be updated in form.html.
@@ -93,6 +110,15 @@ def get_form(ua_header):
 def get_problem(category):
     '''Return human-readable label for problem choices form value.'''
     for choice in problem_choices:
+        if choice[0] == category:
+            return choice[1]
+    # Something probably went wrong. Return something safe.
+    return u'Unknown'
+
+
+def get_browser_test(category):
+    '''Return human-readable label for problem choices form value.'''
+    for choice in browser_test_choices:
         if choice[0] == category:
             return choice[1]
     # Something probably went wrong. Return something safe.
@@ -189,6 +215,7 @@ def build_formdata(form_object):
     normalized_url = normalize_url(url)
     domain = domain_name(normalized_url)
     problem_summary = get_problem_summary(form_object.get('problem_category'))
+    browser_test_sumary = get_browser_test(form_object.get('browser_test_category'))
 
     if domain:
         summary = '{0} - {1}'.format(domain, problem_summary)
@@ -202,7 +229,9 @@ def build_formdata(form_object):
         'browser': form_object.get('browser'),
         'os': form_object.get('os'),
         'problem_type': get_problem(form_object.get('problem_category')),
-        'description': form_object.get('description')
+        'browser_test_type': get_problem(form_object.get('browser_test_category')),
+        'description': form_object.get('description'),
+        'steps_reproduce': form_object.get('steps_reproduce')
     }
 
     # Preparing the body
