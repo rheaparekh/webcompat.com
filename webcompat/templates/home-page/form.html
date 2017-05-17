@@ -121,21 +121,22 @@
             <div class="wc-ReportForm-actions">
               <div class="wc-ReportForm-actions-button">
                 <button name="submit-type"
-                        value="github-auth-report"
+                        value="github-proxy-report"
                         class="wc-Button wc-Button--default js-Button"
+                        id="submitanon"
+                >
+                        Report Anonymously
+                </button>
+              </div>
+
+              <div class="wc-ReportForm-actions-button">
+                <button name="submit-type"
+                        value="github-auth-report"
+                        class="wc-Button wc-Button--action js-Button"
                         id="submitgithub"
                         type="submit"
                 >
                   {% if session.username %}Report as {{ session.username }}{% else %}Report via GitHub{% endif %}
-                </button>
-              </div>
-              <div class="wc-ReportForm-actions-button">
-                <button name="submit-type"
-                        value="github-proxy-report"
-                        class="wc-Button wc-Button--action js-Button"
-                        id="submitanon"
-                >
-                        Report Anonymously
                 </button>
               </div>
             </div>
