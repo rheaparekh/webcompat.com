@@ -34,11 +34,10 @@ GITHUB_HELP = u'_From [webcompat.com](https://webcompat.com/) with ❤️_'
 
 problem_choices = [
     (u'detection_bug', u'Desktop site instead of mobile site'),
-    (u'mobile_site_bug', u'Mobile site is not usable'),
-    (u'video_bug', u'Video doesn\'t play'),
-    (u'layout_bug', u'Layout is messed up'),
-    (u'text_bug', u'Text is not visible'),
-    (u'unknown_bug', u'Something else - I\'ll add details below')
+    (u'mobile_site_bug', u'The site is not usable'), #still mobile_site_bug?
+    (u'layout_bug', u'The design is broken'),
+    (u'video_bug', u'Video or audio doesn\'t play'),
+    (u'unknown_bug', u'Something else')
 ]
 
 url_message = u'A valid URL is required.'

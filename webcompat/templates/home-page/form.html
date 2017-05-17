@@ -32,7 +32,7 @@
 
             <fieldset class="{% if form.problem_category.errors %}is-error{% endif %}">
               <div class="wc-Form-information">
-                <label class="wc-Form-label">What seems to be the trouble? <span class="wc-Form-required">*</span></label>
+                <label class="wc-Form-label">Type of issue <span class="wc-Form-required">*</span></label>
                 {% if form.problem_category.errors %}{% for error in form.problem_category.errors %}
                 <span class="wc-Form-helpMessage">{{ error }}</span>
                 {% endfor %}{% endif %}
