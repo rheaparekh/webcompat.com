@@ -74,7 +74,7 @@ class IssueForm(FlaskForm):
     '''Define form fields and validation for our bug reporting form.'''
     url = StringField(url_label,
                       [InputRequired(message=url_message)])
-    browser = StringField(u'Browser / Version', [Optional()])
+    browser = StringField(u'Is this information correct?', [Optional()])
     os = StringField(u'Operating System', [Optional()])
     username = StringField(u'Username',
                            [Length(max=0, message=username_message)])

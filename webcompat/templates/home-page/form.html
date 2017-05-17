@@ -63,14 +63,14 @@
               <span class="wc-Form-validation">
               {{ form.browser(class_='wc-Form-item') }}
               </span>
-            </div>
-            <div class="wc-Form-group wc-Form-group--biggerOffset js-Form-group">
-              {{ form.os.label(class_='wc-Form-label') }}
               <span class="wc-Form-validation">
               {{ form.os(class_='wc-Form-item') }}
               </span>
             </div>
-
+<!--             <div class="wc-Form-group wc-Form-group--biggerOffset js-Form-group">
+              {{ form.os.label(class_='wc-Form-label') }}
+            </div>
+ -->
             <fieldset class="{% if form.browser_test_category.errors %}is-error{% endif %}">
               <div class="wc-Form-information">
                 <label class="wc-Form-label">Did you test in another browser? <span class="wc-Form-required">*</span></label>
@@ -78,11 +78,11 @@
                 <span class="wc-Form-helpMessage">{{ error }}</span>
                 {% endfor %}{% endif %}
               </div>
-                {% for subradio in form.browser_test_category %}
                 <div class="wc-Form-radio">
+                {% for subradio in form.browser_test_category %}
                   {{ subradio }} {{ subradio.label }}
-                </div>
                 {% endfor %}
+                </div>
             </fieldset>
 
             <div class="js-image-upload wc-Form-group js-Form-group {% if form.image.errors %}is-error{% endif %}">
@@ -127,9 +127,6 @@
                 >
                         Report Anonymously
                 </button>
-              </div>
-
-              <div class="wc-ReportForm-actions-button">
                 <button name="submit-type"
                         value="github-auth-report"
                         class="wc-Button wc-Button--action js-Button"
@@ -139,7 +136,9 @@
                   {% if session.username %}Report as {{ session.username }}{% else %}Report via GitHub{% endif %}
                 </button>
               </div>
-            </div>
+<!--               <div class="wc-ReportForm-actions-button">
+              </div>
+ -->            </div>
         </div>
 
 
