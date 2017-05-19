@@ -80,6 +80,11 @@
       text-decoration: underline;
     }
 
+  /* overwriting default text input style */
+  input {
+    border-width: 0;
+  }
+
   /* input */
   .wc-Form-item {
     display: block;
@@ -89,11 +94,11 @@
     font-weight: 300;
     color: #555;
     background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 20px;
+    border-bottom: 3px solid #ccc;
+    /*border-radius: 20px;*/
     padding: 0.5em;
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset;
-    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    /*box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset;*/
+    /*transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;*/
   }
 
     /* state */
@@ -104,7 +109,7 @@
     /* event */
     .wc-Form-item:focus {
       border-color: #66AFE9;
-      box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(102, 175, 233, 0.6);
+      /*box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(102, 175, 233, 0.6);*/
     }
 
     .wc-Form-input::placeholder {
