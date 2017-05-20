@@ -165,10 +165,14 @@ input[type=radio]:checked ~ .check-radio::before {
     }
 
     /* event */
-    .wc-Form-item:focus {
+    input[type="text"].wc-Form-item:focus,
+    input[type="url"].wc-Form-item:focus {
       border-bottom: 3px solid #6FC7FA;
-      /*border-color: #66AFE9;*/
-      /*box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(102, 175, 233, 0.6);*/
+    }
+
+    textarea.wc-Form-item:focus {
+      border-color: #66AFE9;
+      box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(102, 175, 233, 0.6);
     }
 
     .wc-Form-input::placeholder {
