@@ -40,6 +40,7 @@
                 {% for subradio in form.problem_category %}
                 <div class="wc-Form-radio">
                   {{ subradio }} {{ subradio.label }}
+                  <div class="check-radio"></div>
                 </div>
                 {% endfor %}
             </fieldset>
@@ -78,11 +79,12 @@
                 <span class="wc-Form-helpMessage">{{ error }}</span>
                 {% endfor %}{% endif %}
               </div>
+              {% for subradio in form.browser_test_category %}
                 <div class="wc-Form-radio">
-                {% for subradio in form.browser_test_category %}
                   {{ subradio }} {{ subradio.label }}
-                {% endfor %}
+                  <div class="check-radio"></div>
                 </div>
+              {% endfor %}
             </fieldset>
 
             <div class="js-image-upload wc-Form-group js-Form-group {% if form.image.errors %}is-error{% endif %}">
