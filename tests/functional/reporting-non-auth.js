@@ -181,11 +181,19 @@ define(
             })
             .end()
             // pick a problem type
-            .findByCssSelector("#problem_category-0")
+            .findByCssSelector('label[for="problem_category-0"]')
             .click()
             .end()
             // validation message should be gone
-            .waitForDeletedByCssSelector(".wc-Form-helpMessage")
+            .findByCssSelector(".wc-Form-helpMessage")
+            .getVisibleText()
+            .then(function(text) {
+              assert.lengthOf(
+                text,
+                0,
+                "Problem type validation message is empty"
+              );
+            })
             .end()
         );
       },
