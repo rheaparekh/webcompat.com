@@ -235,10 +235,13 @@ define(
             .type("http://coolguy.biz")
             .end()
             // pick a problem type
-            .findByCssSelector("#problem_category-0")
+            .findByCssSelector('label[for="problem_category-0"]')
             .click()
             .end()
             .findByCssSelector("#description")
+            .click()
+            .end()
+            .findByCssSelector('label[for="browser_test_category-0"]')
             .click()
             .end()
             // wait a bit
