@@ -61,10 +61,10 @@
           <div class="wc-Form-group wc-Form-group--biggerOffset js-Form-group {% if form.url.errors %}is-error{% endif %}">
             <div class="wc-Form-group wc-Form-group--biggerOffset js-Form-group">
               {{ form.browser.label(class_='wc-Form-label') }}
-              <span class="wc-Form-validation">
+              <span class="wc-Form-validation" id="span-browser">
               {{ form.browser(class_='wc-Form-item') }}
               </span>
-              <span class="wc-Form-validation">
+              <span class="wc-Form-validation"  id="span-os">
               {{ form.os(class_='wc-Form-item') }}
               </span>
             </div>

@@ -114,8 +114,8 @@ define(
             .execute(function() {
               return window
                 .getComputedStyle(
-                  document.querySelector(
-                    "div.wc-Form-group:nth-child(2) > span:nth-child(2)"
+                  document.getElementById(
+                    "span-browser"
                   ),
                   ":after"
                 )
@@ -140,8 +140,8 @@ define(
             .execute(function() {
               return window
                 .getComputedStyle(
-                  document.querySelector(
-                    "div.wc-Form-group:nth-child(3) > span:nth-child(2)"
+                  document.getElementById(
+                    "span-os"
                   ),
                   ":after"
                 )
