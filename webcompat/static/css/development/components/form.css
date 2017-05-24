@@ -201,6 +201,7 @@ input[type=radio]:checked ~ .check-radio::before {
     display: block;
     clear: both;
     position: relative;
+    margin-bottom: 12px;
   }
 
     .wc-Form-validation::after {
