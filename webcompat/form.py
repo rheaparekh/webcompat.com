@@ -54,14 +54,10 @@ username_message = u'A valid username must be {0} characters long'.format(
 
 problem_label = (u'What seems to be the trouble?',
                  '<span class="wc-Form-required">*</span>')
-url_label = u'Site URL <span class="wc-Form-required">*</span>'
+url_label = (u'Site URL <span class="wc-Form-required">*</span>')
 
-desc_default = u'''1. Navigate to: Site URL
-2. …
-
-Expected Behavior:
-
-'''
+desc_label = (u'Describe what was wrong <span class="wc-Form-required">*</span>')
+desc_message = u'An issue description is required.'
 
 steps_default = u'''1. Navigate to: Site URL
 2. …
@@ -78,8 +74,9 @@ class IssueForm(FlaskForm):
     os = StringField(u'Operating System', [Optional()])
     username = StringField(u'Username',
                            [Length(max=0, message=username_message)])
-    description = TextAreaField(u'Describe what was wrong', [Optional()],
-                                default=desc_default)
+
+    description = StringField(desc_label,
+                      [InputRequired(message=desc_message)])
     steps_reproduce = TextAreaField(u'How did you get there?', [Optional()],
                                 default=steps_default)
     problem_category = RadioField(problem_label,
