@@ -34,8 +34,8 @@ GITHUB_HELP = u'_From [webcompat.com](https://webcompat.com/) with ❤️_'
 
 problem_choices = [
     (u'detection_bug', u'Desktop site instead of mobile site'),
-    (u'mobile_site_bug', u'The site is not usable'), #still mobile_site_bug?
-    (u'layout_bug', u'The design is broken'),
+    (u'mobile_site_bug', u'Site is not usable'), #still mobile_site_bug?
+    (u'layout_bug', u'Design is broken'),
     (u'video_bug', u'Video or audio doesn\'t play'),
     (u'unknown_bug', u'Something else')
 ]
@@ -56,13 +56,13 @@ problem_label = (u'What seems to be the trouble?',
                  '<span class="wc-Form-required">*</span>')
 url_label = (u'Site URL <span class="wc-Form-required">*</span>')
 
-desc_label = (u'Describe what was wrong <span class="wc-Form-required">*</span>')
+desc_label = (u'Please describe what was wrong <span class="wc-Form-required">*</span>')
 desc_message = u'An issue description is required.'
 
-steps_default = u'''1. Navigate to: Site URL
-2. …
-
-Actual Behavior:
+steps_default = u'''1. I've tried to log in.
+2. I've filled out the form details.
+3. I clicked on the submit button.
+4. Nothing happened. 
 
 '''
 
