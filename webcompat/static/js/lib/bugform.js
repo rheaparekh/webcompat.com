@@ -94,41 +94,40 @@ function BugForm() {
     );
   };
 
-// test #1571
+  // Event handler for image file drop; purpose to prevent multiple drops
   this.handleImageDrop = function(ev) {
-    console.log('start drop event')
+    // console.log("start drop event");
 
     var imageFilled = false;
-    if ($('.wc-UploadForm-wrapper.is-hidden').length) {
-      console.log('image is filled')
+    if ($(".wc-UploadForm-wrapper.is-hidden").length) {
+      // console.log("image is filled");
       imageFilled = true;
     }
     if (imageFilled) {
-      console.log('want to prevent image drop')
+      // console.log("want to prevent image drop");
       ev.preventDefault();
     } else {
-      console.log('want to allow image drop')
-      console.log('image was dropped');
+      // console.log("want to allow image drop");
+      // console.log("image was dropped");
     }
-  }
+  };
 
-// test #1571
+  // Event handler for image file dragover; purpose to prevent multiple drops
   this.handleImageDrag = function(ev) {
-    console.log('start drag event');
+    // console.log("start drag event");
 
     var imageFilled = false;
-    if ($('.wc-UploadForm-wrapper.is-hidden').length) {
-      console.log('image is filled')
+    if ($(".wc-UploadForm-wrapper.is-hidden").length) {
+      // console.log("image is filled");
       imageFilled = true;
     }
     if (imageFilled) {
-      console.log('want to prevent image drop (from drag)')
+      // console.log("want to prevent image drop (from drag)");
       ev.preventDefault();
     } else {
-      console.log('want to allow image drop (from drag)')
+      // console.log("want to allow image drop (from drag)");
     }
-
-  }
+  };
 
   this.resampleIfNecessaryAndUpload = function(screenshotData) {
     // The final size of Base64-encoded binary data is ~equal to
