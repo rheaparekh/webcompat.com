@@ -418,6 +418,7 @@ function BugForm() {
     var reader = new FileReader();
     reader.onload = _.bind(function(event) {
       var dataURI = event.target.result;
+console.log('dataURI: ' + dataURI);
       this.resampleIfNecessaryAndUpload(dataURI);
     }, this);
     reader.readAsDataURL(blobOrFile);
